@@ -30,8 +30,8 @@
                     <li class="nav-item"><a class="nav-link" href=""><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <span class=" navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="loginModal" id="loginModal">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -40,12 +40,12 @@
         </div>
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Login </h4>
+                    <h4 class="modal-title text-white">Login </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -91,8 +91,8 @@
                         <!-- <a role="button" class="btn btn-block nav-link btn-warning" 
                         data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
                         data-placement="bottom" id="#reserveform">Reserve Table</a> -->
-                        <a data-toggle="modal" data-target="#reservetable">
-                         <button type="submit" class="btn btn-warning btn-block " data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                        <a data-toggle="modal" data-target="reservetable">
+                         <button type="submit" id="reserve" class="btn btn-warning btn-block " data-toggle="tooltip" data-html="true" 
                             data-placement="bottom">Reserve Table</button>
                         </a>
                 </div>
@@ -216,9 +216,11 @@
                     <div class="col-12 col-md-3">
                     </div>
                         <div class="card">
-                            <h3 class="card-header text-black ">Reseve a Table
+                            <div class="modal-header">
+                                <h4 class="modal-title text-white">Reseve a Table </h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </h3>
+                            </div>
+                           
                             <div class="modal-body">
                                 <form>
                                     <div class="card-body" id="form">
@@ -344,6 +346,21 @@
                 $('[data-toggle="tooltip"]').tooltip();
             });
         </script> -->
+        <script>
+            $(document).ready(function(){
+              $("#loginModal").click(function(){
+                $("#login").modal();
+              });
+            });
+            </script>
+
+            <script>
+                $(document).ready(function(){
+                $("#reserve").click(function(){
+                    $("#reservetable").modal();
+                });
+                });
+            </script>
         <script>
             $(document).ready(function(){
                 $('#mycarousel').carousel({interval : 2000});
